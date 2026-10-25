@@ -6,7 +6,7 @@ from data_engine.cleaning import COLUMNS, add_duration
 GROUP_COLS = ["member_casual", "rideable_type"]
 
 
-def run_chunked(path, min_duration=60, max_duration=3600, chunksize=100_000):
+def run_chunked(path, min_duration=60, max_duration=3600, chunksize=50_000):
     """same inputs and outputs as run_baseline, plus chunksize (rows per chunk)"""
     totals = {}  # (member_casual, rideable_type) -> [count, sum_duration]
     seen = set()  # every ride_id kept so far, to catch duplicates across chunks

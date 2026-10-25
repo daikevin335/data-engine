@@ -110,7 +110,7 @@ def environment():
     }
 
 
-def run_benchmark(path, trials=5, chunksize=100_000, warmup=1):
+def run_benchmark(path, trials=5, chunksize=50_000, warmup=1):
     path = Path(path).resolve()
     runs = {s: [] for s in STRATEGIES}
 
@@ -167,7 +167,7 @@ def main(argv=None):
     run = sub.add_parser("run", help="benchmark both strategies on a CSV")
     run.add_argument("path")
     run.add_argument("--trials", type=int, default=5)
-    run.add_argument("--chunksize", type=int, default=100_000)
+    run.add_argument("--chunksize", type=int, default=50_000)
     run.add_argument("--out", help="also save the full report as JSON to this path")
 
     worker = sub.add_parser("worker", help="(internal) measure one run and print JSON")
