@@ -1,6 +1,6 @@
 # Milestone 3: Chunked implementation
 
-The chunked strategy reads the CSV in pieces of `chunksize` rows, cleans and filters each piece, adds that piece's per-group count and sum into running totals, then discards the piece. It must return exactly the same result as the baseline ([milestone-2-baseline.md](milestone-2-baseline.md)) at any chunk size.
+The chunked strategy reads the CSV in pieces of `chunksize` rows, cleans and filters each piece, adds that piece's per-group count and sum into running totals, then discards the piece. It must return exactly the same result as the baseline ([baseline.md](baseline.md)) at any chunk size.
 
 ## Components
 
@@ -49,10 +49,7 @@ The tests include:
 ### Results
 
 - Test suite (baseline, chunked and benchmark tests together): 28 passed (Python 3.14.0, pandas 3.0.6, pytest 9.1.1, macOS).
-- `compare.py` on `JC-202609-citibike-tripdata.csv`: 
-`chunksize 5000 -> identical to baseline
-chunksize 20000 -> identical to baseline
-chunksize 100000 -> identical to baseline`.
+- `compare.py` on `JC-202609-citibike-tripdata.csv`: identical to baseline at chunk sizes 5,000, 20,000 and 100,000.
 
 ## Limitations
 
