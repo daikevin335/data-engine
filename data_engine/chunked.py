@@ -20,14 +20,14 @@ def run_chunked(path, min_duration=60, max_duration=3600, chunksize=100_000):
         "rows_used": 0,
     }
 
-    for chunk in pd.read_csv(path, usecols=COLUMNS, chunksize=chunksize):
+    for chunk in pd.read_csv(path, usecols = COLUMNS, chunksize = chunksize):
         chunk, chunk_counts = add_duration(chunk)
         for key, value in chunk_counts.items():
             counts[key] += value
 
         # Rule 5: drop repeated ride_id, keeping the first in file order.
         before = len(chunk)
-        chunk = chunk.drop_duplicates(subset="ride_id", keep="first")  # repeats inside this chunk
+        chunk = chunk.drop_duplicates(subset = "ride_id", keep = "first")  # repeats inside this chunk
         # repeats of earlier chunks. A direct set lookup per row costs time proportional to the
         # chunk. (Series.isin(seen) would rebuild an array from the WHOLE set on every chunk.)
         already_seen = pd.Series([rid in seen for rid in chunk["ride_id"]], index = chunk.index, dtype = bool)

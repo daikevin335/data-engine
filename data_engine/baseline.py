@@ -19,9 +19,9 @@ def run_baseline(path, min_duration = 60, max_duration = 3600):
 
     # group and aggregate 
     grouped = df.groupby(["member_casual", "rideable_type"])["duration_seconds"].agg(
-        count="count", sum_duration="sum"
+        count = "count", sum_duration = "sum"
     )
-    # avg duration 
+    # avg duration ii
     grouped["avg_duration"] = grouped["sum_duration"] / grouped["count"]
     counts["rows_used"] = int(grouped["count"].sum())
 
