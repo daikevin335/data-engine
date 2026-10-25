@@ -1,0 +1,511 @@
+{
+  "file": "JC-202609-citibike-tripdata.csv",
+  "file_size_mb": 23.2,
+  "chunksize": 5000,
+  "trials": 5,
+  "warmup_runs": 1,
+  "environment": {
+    "python": "3.14.0",
+    "pandas": "3.0.6",
+    "platform": "macOS-26.5.2-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "cpu_count": 10
+  },
+  "outputs_equivalent": true,
+  "summary": {
+    "baseline": {
+      "trials": 5,
+      "median_seconds": 0.1346527081914246,
+      "min_seconds": 0.13287224993109703,
+      "max_seconds": 0.16357566602528095,
+      "median_rows_per_second": 791874.1585829511,
+      "median_extra_rss_mb": 82.59174399999999,
+      "median_peak_rss_mb": 159.00672
+    },
+    "chunked": {
+      "trials": 5,
+      "median_seconds": 0.20421841694042087,
+      "min_seconds": 0.1956305420026183,
+      "max_seconds": 0.24152704188600183,
+      "median_rows_per_second": 522127.2478628012,
+      "median_extra_rss_mb": 35.536896,
+      "median_peak_rss_mb": 111.837184
+    }
+  },
+  "raw_runs": {
+    "baseline": [
+      {
+        "strategy": "baseline",
+        "seconds": 0.16357566602528095,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 161.13664,
+        "extra_rss_mb": 84.606976,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.19,
+            "avg_duration": 820.17419085674
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.908,
+            "avg_duration": 444.4306339033257
+          }
+        ]
+      },
+      {
+        "strategy": "baseline",
+        "seconds": 0.1346527081914246,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 159.08864,
+        "extra_rss_mb": 82.57536,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.19,
+            "avg_duration": 820.17419085674
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.908,
+            "avg_duration": 444.4306339033257
+          }
+        ]
+      },
+      {
+        "strategy": "baseline",
+        "seconds": 0.1352681671269238,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 159.00672,
+        "extra_rss_mb": 82.624512,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.19,
+            "avg_duration": 820.17419085674
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.908,
+            "avg_duration": 444.4306339033257
+          }
+        ]
+      },
+      {
+        "strategy": "baseline",
+        "seconds": 0.1337706670165062,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 158.793728,
+        "extra_rss_mb": 82.59174399999999,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.19,
+            "avg_duration": 820.17419085674
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.908,
+            "avg_duration": 444.4306339033257
+          }
+        ]
+      },
+      {
+        "strategy": "baseline",
+        "seconds": 0.13287224993109703,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 158.973952,
+        "extra_rss_mb": 82.57536,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.19,
+            "avg_duration": 820.17419085674
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.908,
+            "avg_duration": 444.4306339033257
+          }
+        ]
+      }
+    ],
+    "chunked": [
+      {
+        "strategy": "chunked",
+        "seconds": 0.20562691614031792,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 111.968256,
+        "extra_rss_mb": 35.667968,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.1899999995,
+            "avg_duration": 820.1741908567399
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.907999996,
+            "avg_duration": 444.4306339033256
+          }
+        ]
+      },
+      {
+        "strategy": "chunked",
+        "seconds": 0.24152704188600183,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 110.42816,
+        "extra_rss_mb": 34.12787200000001,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.1899999995,
+            "avg_duration": 820.1741908567399
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.907999996,
+            "avg_duration": 444.4306339033256
+          }
+        ]
+      },
+      {
+        "strategy": "chunked",
+        "seconds": 0.20421841694042087,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 111.837184,
+        "extra_rss_mb": 35.56966399999999,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.1899999995,
+            "avg_duration": 820.1741908567399
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.907999996,
+            "avg_duration": 444.4306339033256
+          }
+        ]
+      },
+      {
+        "strategy": "chunked",
+        "seconds": 0.19787395792081952,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 111.853568,
+        "extra_rss_mb": 35.536896,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.1899999995,
+            "avg_duration": 820.1741908567399
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.907999996,
+            "avg_duration": 444.4306339033256
+          }
+        ]
+      },
+      {
+        "strategy": "chunked",
+        "seconds": 0.1956305420026183,
+        "rows_read": 106628,
+        "rows_used": 105594,
+        "peak_rss_mb": 111.591424,
+        "extra_rss_mb": 35.373056000000005,
+        "counts": {
+          "rows_read": 106628,
+          "dropped_missing": 0,
+          "dropped_unparseable": 0,
+          "dropped_nonpositive_duration": 0,
+          "dropped_duplicate": 0,
+          "dropped_by_filter": 1034,
+          "rows_used": 105594
+        },
+        "result": [
+          {
+            "member_casual": "casual",
+            "rideable_type": "classic_bike",
+            "count": 8509,
+            "sum_duration": 6978862.1899999995,
+            "avg_duration": 820.1741908567399
+          },
+          {
+            "member_casual": "casual",
+            "rideable_type": "electric_bike",
+            "count": 18616,
+            "sum_duration": 10830409.057,
+            "avg_duration": 581.7796012569833
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "classic_bike",
+            "count": 33907,
+            "sum_duration": 16592216.346,
+            "avg_duration": 489.3448652490636
+          },
+          {
+            "member_casual": "member",
+            "rideable_type": "electric_bike",
+            "count": 44562,
+            "sum_duration": 19804717.907999996,
+            "avg_duration": 444.4306339033256
+          }
+        ]
+      }
+    ]
+  }
+}
