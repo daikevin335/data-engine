@@ -53,6 +53,6 @@ The tests include:
 
 ## Limitations
 
-- Equivalence has been tested on a small fixture and the Jersey City file only. The much larger New York files have not been tried.
-- No runtime or memory measurements exist yet. This milestone establishes that the two strategies agree, not that either is faster or smaller. Benchmarks come next.
-- Chunk size affects both speed and memory, and no default has been chosen on evidence. The default of 100,000 rows is a placeholder.
+- Equivalence has been tested on a hand-made fixture, the Jersey City file, and New York files of 1M, 2M and 4.98M rows. The benchmark also checks that both strategies' outputs match on every run.
+- Measurements are in [benchmark-report.md](benchmark-report.md). On the whole month, chunked used 67% less extra memory and took 17% longer than the baseline at 100,000 rows per chunk.
+- Chunked memory is not bounded by chunk size, because the set of seen ride IDs grows with the number of unique rides. The default of 50,000 rows was chosen from a whole-month sweep and is nearly tied with 100,000 and 250,000.
