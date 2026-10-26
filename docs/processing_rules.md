@@ -26,9 +26,3 @@ No missing values, duplicates, unparseable timestamps, or non-positive durations
 - Part 1 (1,000,000 rows): no missing values, duplicate ride IDs, unparseable timestamps or non-positive durations; 166 trips over 24 hours.
 - Whole month (all 5 parts joined, 4,982,855 rows): no missing values, no unparseable timestamps, no non-positive durations, and no duplicate ride IDs across parts. 46,814 rows (0.94%) fell outside the 60 to 3600 second range, leaving 4,936,041 rows used.
 - Source: `benchmarks/nyc-5parts.json`. The duplicate-removal rule removed no rows on this data, so only the tests have exercised it.
-
-## Checked on New York data (202609)
-
-- Part 1 (1,000,000 rows): no missing values, duplicate ride IDs, unparseable timestamps or non-positive durations; 166 trips over 24 hours.
-- Whole month (all 5 parts joined, 4,982,855 rows): no missing values, no unparseable timestamps, no non-positive durations, and no duplicate ride IDs across parts. 46,814 rows (0.94%) fell outside the 60 to 3600 second range, leaving 4,936,041 rows used.
-- Source: `benchmarks/nyc-5parts.json`. The duplicate-removal rule removed no rows on this data, so only the tests have exercised it.
