@@ -1,7 +1,7 @@
 """REST API for submitting and inspecting processing jobs.
 
 Run from the repository root:
-    uvicorn data_engine.api:app --reload
+    uvicorn data_engine.api:build_app --factory --reload
 Interactive docs appear at http://127.0.0.1:8000/docs
 """
 import json
@@ -139,7 +139,24 @@ def create_app(data_dir, store=None, benchmarks_dir="benchmarks"):
     return app
 
 
-app = create_app(
-    os.environ.get("DATA_ENGINE_DATA_DIR", "data"),
-    benchmarks_dir=os.environ.get("DATA_ENGINE_BENCHMARKS_DIR", "benchmarks"),
-)
+def store_from_env():
+    """PostgreSQL if DATABASE_URL is set, otherwise the in-memory store."""
+    url = os.environ.get("DATABASE_URL")
+    if not url:
+        log.warning("DATABASE_URL is not set: using the in-memory job store (jobs are lost on restart)")
+        return JobStore()
+    from data_engine.pg_jobs import PostgresJobStore  # imported here: memory-only use needs no database library
+
+    store = PostgresJobStore(url)
+    store.init_schema()
+    return store
+
+
+def build_app():
+    """The app uvicorn runs. A function, not a module-level variable, so that merely
+    importing this module (as the tests do) never opens a database connection."""
+    return create_app(
+        os.environ.get("DATA_ENGINE_DATA_DIR", "data"),
+        store=store_from_env(),
+        benchmarks_dir=os.environ.get("DATA_ENGINE_BENCHMARKS_DIR", "benchmarks"),
+    )

@@ -5,8 +5,10 @@ The API puts the processing engine behind HTTP. A client submits a job, the serv
 Run it from the repository root:
 
 ```
-uvicorn data_engine.api:app --reload
+uvicorn data_engine.api:build_app --factory --reload
 ```
+
+Without a `DATABASE_URL` environment variable, jobs are kept in memory. With one, they are stored in PostgreSQL ([postgres.md](postgres.md)).
 
 FastAPI generates an interactive page at http://127.0.0.1:8000/docs where every endpoint can be tried from the browser.
 
@@ -72,7 +74,7 @@ The counts add up to `rows_used` (105,594), which is 106,628 rows read minus 1,0
 
 ## Limitations
 
-- Jobs live in memory: they are lost when the server restarts and are not shared between server processes. PostgreSQL addresses this.
+- With the default in-memory store, jobs are lost when the server restarts and are not shared between server processes. Setting `DATABASE_URL` switches to PostgreSQL, which fixes both.
 - The job runs inside the web server process. A long job competes with other requests for CPU, and a server restart kills it. Celery with Redis addresses this.
 - No authentication, no limit on how many jobs run at once, no cancellation, and finished jobs are never removed, so memory grows with use.
 - Only files in one data folder can be processed, chosen by the `DATA_ENGINE_DATA_DIR` environment variable (default `data`). The benchmark folder is set by `DATA_ENGINE_BENCHMARKS_DIR` (default `benchmarks`).
